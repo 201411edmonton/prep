@@ -21,28 +21,13 @@ namespace prep.collections
     {
       throw new NotImplementedException();
     }
-
-    public IEnumerable<Movie> sort_all_movies_by_title_descending()
-    {
-      throw new NotImplementedException();
-    }
-
+    
     public IEnumerable<Movie> all_movies_published_by_pixar()
     {
       throw new NotImplementedException();
     }
 
     public IEnumerable<Movie> all_movies_published_by_pixar_or_disney()
-    {
-      throw new NotImplementedException();
-    }
-
-    public IEnumerable<Movie> sort_all_movies_by_title_ascending()
-    {
-      throw new NotImplementedException();
-    }
-
-    public IEnumerable<Movie> sort_all_movies_by_movie_studio_and_year_published()
     {
       throw new NotImplementedException();
     }
@@ -68,6 +53,21 @@ namespace prep.collections
     }
 
     public IEnumerable<Movie> all_action_movies()
+    {
+      throw new NotImplementedException();
+    }
+
+    public IEnumerable<Movie> sort_all_movies_by_title_descending()
+    {
+      throw new NotImplementedException();
+    }
+
+    public IEnumerable<Movie> sort_all_movies_by_title_ascending()
+    {
+      throw new NotImplementedException();
+    }
+
+    public IEnumerable<Movie> sort_all_movies_by_movie_studio_and_year_published()
     {
       throw new NotImplementedException();
     }
