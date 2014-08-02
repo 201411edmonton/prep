@@ -1,0 +1,6 @@
+expand do
+
+  load 'settings.rb'
+
+  look_for_templates_in "*.{erb,mustache}"
+end
