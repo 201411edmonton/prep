@@ -10,3 +10,4 @@ alias smc=./save_my_changes
 alias sne=./start_new_excercise
 alias sr='rake specs:run'
 alias sv='rake specs:view'
+alias trash='git reset --hard && git clean -d -f'
