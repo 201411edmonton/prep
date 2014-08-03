@@ -212,7 +212,7 @@ namespace prep.specs
       {
         var results = sut.all_movies_published_after(2004);
 
-        results.ShouldContainOnly(the_ring, shrek, theres_something_about_mary);
+        results.ShouldContainOnly(yours_mine_and_ours, shrek, theres_something_about_mary);
       };
 
       It should_be_able_to_find_all_movies_published_between_a_certain_range_of_years = () =>
@@ -248,7 +248,7 @@ namespace prep.specs
       {
         var results = sut.sort_all_movies_by_title_descending();
 
-        results.ShouldContainOnlyInOrder(theres_something_about_mary, the_ring, shrek,
+        results.ShouldContainOnlyInOrder(theres_something_about_mary, yours_mine_and_ours, shrek,
                                          pirates_of_the_carribean, indiana_jones_and_the_temple_of_doom,
                                          cars, a_bugs_life);
       };
@@ -258,7 +258,7 @@ namespace prep.specs
         var results = sut.sort_all_movies_by_title_ascending();
 
         results.ShouldContainOnlyInOrder(a_bugs_life, cars, indiana_jones_and_the_temple_of_doom,
-                                         pirates_of_the_carribean, shrek, the_ring,
+                                         pirates_of_the_carribean, shrek, yours_mine_and_ours,
                                          theres_something_about_mary);
       };
 
@@ -266,7 +266,7 @@ namespace prep.specs
       {
         var results = sut.sort_all_movies_by_date_published_descending();
 
-        results.ShouldContainOnlyInOrder(theres_something_about_mary, shrek, the_ring, cars,
+        results.ShouldContainOnlyInOrder(theres_something_about_mary, shrek, yours_mine_and_ours, cars,
                                          pirates_of_the_carribean, a_bugs_life,
                                          indiana_jones_and_the_temple_of_doom);
       };
@@ -276,7 +276,7 @@ namespace prep.specs
         var results = sut.sort_all_movies_by_date_published_ascending();
 
         results.ShouldContainOnlyInOrder(indiana_jones_and_the_temple_of_doom, a_bugs_life,
-                                         pirates_of_the_carribean, cars, the_ring, shrek,
+                                         pirates_of_the_carribean, cars, yours_mine_and_ours, shrek,
                                          theres_something_about_mary);
       };
 
@@ -295,7 +295,7 @@ namespace prep.specs
                  * year published. For this test you cannot add any extra properties/fields to either the ProductionStudio or
                  * Movie classes.*/
 
-        results.ShouldContainOnlyInOrder(the_ring, theres_something_about_mary, a_bugs_life, cars, shrek,
+        results.ShouldContainOnlyInOrder(yours_mine_and_ours, theres_something_about_mary, a_bugs_life, cars, shrek,
                                          indiana_jones_and_the_temple_of_doom,
                                          pirates_of_the_carribean);
       };
@@ -308,7 +308,7 @@ namespace prep.specs
       protected static Movie indiana_jones_and_the_temple_of_doom;
       protected static Movie pirates_of_the_carribean;
       protected static Movie shrek;
-      protected static Movie the_ring;
+      protected static Movie yours_mine_and_ours;
       protected static Movie theres_something_about_mary;
 
       Establish c = () =>
@@ -335,11 +335,11 @@ namespace prep.specs
           rating = 10
         };
 
-        the_ring = new Movie
+        yours_mine_and_ours = new Movie
         {
-          title = "The Ring",
+          title = "Yours Mine And Ours",
           date_published = new DateTime(2005, 1, 1),
-          genre = Genre.horror,
+          genre = Genre.comedy,
           production_studio = ProductionStudio.MGM,
           rating = 7
         };
@@ -381,7 +381,7 @@ namespace prep.specs
         movieList.Add(pirates_of_the_carribean);
         movieList.Add(a_bugs_life);
         movieList.Add(shrek);
-        movieList.Add(the_ring);
+        movieList.Add(yours_mine_and_ours);
         movieList.Add(theres_something_about_mary);
       }
     }
