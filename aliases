@@ -1,3 +1,4 @@
+alias clean='rake clean'
 alias ck=./code_kata
 alias ct=./continuous_testing
 alias fb='./fetch_branch $*'
