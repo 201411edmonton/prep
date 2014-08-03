@@ -1,0 +1,10 @@
+alias sr='rake specs:run'
+alias sv='rake specs:view'
+alias ct=./continuous_testing
+alias gljp=./get_latest_from_jp
+alias fl='./fetch_latest $*'
+alias fb='./fetch_branch $*'
+alias gs='rake growl:start'
+alias rr=./rr
+alias push=./push
+alias sne=./start_new_excercise

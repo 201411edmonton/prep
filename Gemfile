@@ -1,5 +1,5 @@
 source "http://rubygems.org"
 
 gem 'rake'
-gem 'configatron', '=2.13.0'
+gem 'configatron'
 gem 'albacore'
