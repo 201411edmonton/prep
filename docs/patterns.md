@@ -13,3 +13,7 @@
 6. Decorator - Adding behaviour to an existing component without changing the code in that component.
 
 7. Strategy - Swap implementations of a family of algorithms interchangeably so the client is not affected when you swap implementations.
+
+8. Gateway - Single point of entry to a specific piece of functionality
+
+9. Factory - Encapsulate complex object creation from the client
