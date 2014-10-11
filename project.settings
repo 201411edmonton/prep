@@ -1,0 +1,29 @@
+configure(
+{
+  git: {
+    provider: missing('provider', __FILE__),
+    user:  missing('user', __FILE__),
+    remotes: potentially_change("remotes",__FILE__),
+    repo: "prep" 
+  },
+
+  course_name: 'Developer Bootcamp',
+  project: "prep",
+  target: "Debug",
+  source_dir: "source",
+  all_references: UniqueFiles.new(Dir.glob("packages/**/*.{dll,exe}")).all_files,
+  artifacts_dir: "artifacts",
+  config_dir: "source/config",
+  app_dir: delayed{"source/#{configatron.project}"},
+  log_file_name: delayed{"#{configatron.project}_log.txt"},
+  log_level: "DEBUG",
+
+  specs:
+  {
+    assemblies: dynamic{ Dir.glob("#{configatron.artifacts_dir}/*specs.dll") },
+    dir: delayed{ File.join(configatron.artifacts_dir,"specs") },
+    report_dir: delayed{ File.join(configatron.specs.dir,"report") },
+    tools_folder: File.join(Dir.glob("packages/Machine.Specifications.*").first,"tools")
+  },
+
+})
