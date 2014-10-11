@@ -45,6 +45,7 @@
  * 
  * Develop With Passion®!!
  */
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -244,9 +245,9 @@ namespace prep.movies
       {
         var results = sut.sort_all_movies_by_title_descending();
 
-        results.ShouldContainOnlyInOrder(yours_mine_and_ours,theres_something_about_mary, shrek,
-                                         pirates_of_the_carribean, indiana_jones_and_the_temple_of_doom,
-                                         cars, a_bugs_life);
+        results.ShouldContainOnlyInOrder(yours_mine_and_ours, theres_something_about_mary, shrek,
+          pirates_of_the_carribean, indiana_jones_and_the_temple_of_doom,
+          cars, a_bugs_life);
       };
 
       It should_be_able_to_sort_all_movies_by_title_ascending = () =>
@@ -254,8 +255,8 @@ namespace prep.movies
         var results = sut.sort_all_movies_by_title_ascending();
 
         results.ShouldContainOnlyInOrder(a_bugs_life, cars, indiana_jones_and_the_temple_of_doom,
-                                         pirates_of_the_carribean, shrek, 
-                                         theres_something_about_mary, yours_mine_and_ours);
+          pirates_of_the_carribean, shrek,
+          theres_something_about_mary, yours_mine_and_ours);
       };
 
       It should_be_able_to_sort_all_movies_by_date_published_descending = () =>
@@ -263,8 +264,8 @@ namespace prep.movies
         var results = sut.sort_all_movies_by_date_published_descending();
 
         results.ShouldContainOnlyInOrder(theres_something_about_mary, shrek, yours_mine_and_ours, cars,
-                                         pirates_of_the_carribean, a_bugs_life,
-                                         indiana_jones_and_the_temple_of_doom);
+          pirates_of_the_carribean, a_bugs_life,
+          indiana_jones_and_the_temple_of_doom);
       };
 
       It should_be_able_to_sort_all_movies_by_date_published_ascending = () =>
@@ -272,8 +273,8 @@ namespace prep.movies
         var results = sut.sort_all_movies_by_date_published_ascending();
 
         results.ShouldContainOnlyInOrder(indiana_jones_and_the_temple_of_doom, a_bugs_life,
-                                         pirates_of_the_carribean, cars, yours_mine_and_ours, shrek,
-                                         theres_something_about_mary);
+          pirates_of_the_carribean, cars, yours_mine_and_ours, shrek,
+          theres_something_about_mary);
       };
 
       It should_be_able_to_sort_all_movies_by_studio_rating_and_year_published = () =>
@@ -292,12 +293,12 @@ namespace prep.movies
                  * Movie classes.*/
 
         results.ShouldContainOnlyInOrder(yours_mine_and_ours, theres_something_about_mary, a_bugs_life, cars, shrek,
-                                         indiana_jones_and_the_temple_of_doom,
-                                         pirates_of_the_carribean);
+          indiana_jones_and_the_temple_of_doom,
+          pirates_of_the_carribean);
       };
     }
 
-    public abstract class concern_for_searching_and_sorting : movie_library_concern
+    public class concern_for_searching_and_sorting : movie_library_concern
     {
       protected static Movie a_bugs_life;
       protected static Movie cars;
@@ -308,11 +309,9 @@ namespace prep.movies
       protected static Movie theres_something_about_mary;
 
       Establish c = () =>
-      {
-        populate_with_default_movie_set(movie_collection);
-      };
+        populate_movie_list(movie_collection);
 
-      static void populate_with_default_movie_set(IList<Movie> movieList)
+      static void populate_movie_list(IList<Movie> movie_list)
       {
         indiana_jones_and_the_temple_of_doom = new Movie
         {
@@ -322,6 +321,7 @@ namespace prep.movies
           production_studio = ProductionStudio.Universal,
           rating = 10
         };
+
         cars = new Movie
         {
           title = "Cars",
@@ -339,6 +339,7 @@ namespace prep.movies
           production_studio = ProductionStudio.MGM,
           rating = 7
         };
+
         shrek = new Movie
         {
           title = "Shrek",
@@ -347,6 +348,7 @@ namespace prep.movies
           production_studio = ProductionStudio.Dreamworks,
           rating = 10
         };
+
         a_bugs_life = new Movie
         {
           title = "A Bugs Life",
@@ -355,6 +357,7 @@ namespace prep.movies
           production_studio = ProductionStudio.Pixar,
           rating = 10
         };
+
         theres_something_about_mary = new Movie
         {
           title = "There's Something About Mary",
@@ -363,6 +366,7 @@ namespace prep.movies
           production_studio = ProductionStudio.MGM,
           rating = 5
         };
+
         pirates_of_the_carribean = new Movie
         {
           title = "Pirates of the Carribean",
@@ -372,13 +376,13 @@ namespace prep.movies
           rating = 10
         };
 
-        movieList.Add(cars);
-        movieList.Add(indiana_jones_and_the_temple_of_doom);
-        movieList.Add(pirates_of_the_carribean);
-        movieList.Add(a_bugs_life);
-        movieList.Add(shrek);
-        movieList.Add(yours_mine_and_ours);
-        movieList.Add(theres_something_about_mary);
+        movie_list.Add(cars);
+        movie_list.Add(indiana_jones_and_the_temple_of_doom);
+        movie_list.Add(pirates_of_the_carribean);
+        movie_list.Add(a_bugs_life);
+        movie_list.Add(shrek);
+        movie_list.Add(yours_mine_and_ours);
+        movie_list.Add(theres_something_about_mary);
       }
     }
   }
