@@ -1,8 +1,8 @@
 configure(
 {
   git: {
-    provider: missing('provider', __FILE__),
-    user:  missing('user', __FILE__),
+    provider: 'github',
+    user:  '201411edmonton',
     remotes: potentially_change("remotes",__FILE__),
     repo: "prep" 
   },
