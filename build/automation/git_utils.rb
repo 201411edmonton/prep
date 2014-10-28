@@ -17,7 +17,7 @@ module Automation
         exit
       end
     end
-    
+
     def git(here_doc)
       here_doc.split("\n").each do |line|
         run_git_command(line)
@@ -83,6 +83,11 @@ command
     latest_branch = latest_branch.sort{|first,second| second <=> first}.first
   end
 
+  def exit_if_on_branches(branches)
+    branches.each do |branch|
+      exit_if_on_the_branch(branch)
+    end
+  end
   def update_to_latest_branch_on(remote_name)
     git <<command
 add -A
