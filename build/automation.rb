@@ -22,6 +22,7 @@ module Automation
 end
 
 require_relative 'automation/git_utils'
+require_relative 'automation/code_kata'
 require_relative 'automation/compile'
 require_relative 'automation/configuration'
 require_relative 'automation/git'
@@ -29,3 +30,4 @@ require_relative 'automation/tools'
 require_relative 'automation/startup'
 require_relative 'automation/continuous_testing'
 require_relative 'automation/specs'
+require_relative 'automation/work'
