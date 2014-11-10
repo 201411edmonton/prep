@@ -14,12 +14,17 @@ namespace prep.movies
 
     public IEnumerable<Movie> all_movies()
     {
-      return this.movies;
+        return this.movies;
     }
 
     public void add(Movie movie)
     {
-      throw new NotImplementedException();
+        foreach (var m in movies)
+        {
+            if (m.Equals(movie))
+                return;
+        }
+      movies.Add(movie);
     }
     
     public IEnumerable<Movie> all_movies_published_by_pixar()
