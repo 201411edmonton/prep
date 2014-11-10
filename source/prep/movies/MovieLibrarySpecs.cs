@@ -53,6 +53,7 @@ using developwithpassion.specifications.extensions;
 using developwithpassion.specifications.rhinomocks;
 using Machine.Specifications;
 using prep.test_utilities;
+using prep.utility;
 
 namespace prep.movies
 {
@@ -202,14 +203,14 @@ namespace prep.movies
 
       It should_be_able_to_find_all_movies_published_by_pixar = () =>
       {
-        var results = sut.all_movies_published_by_pixar();
+        var results = sut.all_movies().all_items_matching(Movie.published_by(ProductionStudio.Pixar));
 
         results.ShouldContainOnly(cars, a_bugs_life);
       };
 
       It should_be_able_to_find_all_movies_published_by_pixar_or_disney = () =>
       {
-        var results = sut.all_movies_published_by_pixar_or_disney();
+        var results = sut.all_movies().all_items_matching(Movie.published_by_pixar_or_disney());
 
         results.ShouldContainOnly(a_bugs_life, pirates_of_the_carribean, cars);
       };
