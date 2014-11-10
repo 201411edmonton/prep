@@ -83,7 +83,9 @@
     <Compile Include="movies\MovieLibrary.cs" />
     <Compile Include="movies\ProductionStudio.cs" />
     <Compile Include="movies\MovieLibrarySpecs.cs" />
+    <Compile Include="movies\ReadOnlySet.cs" />
     <Compile Include="test_utilities\CollectionExtensions.cs" />
+    <Compile Include="utility\IterationExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />

@@ -2,23 +2,29 @@ using System;
 
 namespace prep.movies
 {
-  public class Movie
+  public class Movie : IEquatable<Movie>
   {
     public string title { get; set; }
     public ProductionStudio production_studio { get; set; }
     public Genre genre { get; set; }
     public int rating { get; set; }
     public DateTime date_published { get; set; }
-    protected bool Equals(Movie other)
+
+    public bool Equals(Movie other)
     {
-        return title.Equals(other.title);
+      if (other == null) return false;
+
+      return ReferenceEquals(this, other)  || this.title.Equals(other.title);
     }
 
     public override bool Equals(object obj)
     {
-        if (ReferenceEquals(null, obj)) return false;
-        if (ReferenceEquals(this, obj)) return true;
-        return obj.GetType() == GetType() && Equals((Movie)obj);
+      return Equals(obj as Movie);
+    }
+
+    public override int GetHashCode()
+    {
+      return this.title.GetHashCode();
     }
   }
 }

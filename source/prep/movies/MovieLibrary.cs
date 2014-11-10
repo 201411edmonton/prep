@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using prep.utility;
 
 namespace prep.movies
 {
@@ -14,19 +15,20 @@ namespace prep.movies
 
     public IEnumerable<Movie> all_movies()
     {
-        return this.movies;
+      return movies.one_at_a_time();
     }
 
     public void add(Movie movie)
     {
-        foreach (var m in movies)
-        {
-            if (m.Equals(movie))
-                return;
-        }
+      if (already_contains(movie)) return;
       movies.Add(movie);
     }
-    
+
+    bool already_contains(Movie movie)
+    {
+      return movies.Contains(movie);
+    }
+
     public IEnumerable<Movie> all_movies_published_by_pixar()
     {
       throw new NotImplementedException();
