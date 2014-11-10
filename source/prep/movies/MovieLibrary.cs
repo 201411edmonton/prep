@@ -31,11 +31,7 @@ namespace prep.movies
 
     IEnumerable<Movie> movies_matching(MovieCondition criteria)
     {
-      foreach (var movie in movies)
-      {
-        if (criteria(movie))
-          yield return movie;
-      }
+        return movies.all_items_matching(new Condition<Movie>(criteria));
     }
 
     public IEnumerable<Movie> all_movies_published_by_pixar()
