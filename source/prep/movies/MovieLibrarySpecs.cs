@@ -131,7 +131,7 @@ namespace prep.movies
     {
       Establish c = () =>
       {
-        Enumerable.Range(1,100).each(x => movie_collection.Add(new Movie()));
+        Enumerable.Range(1, 100).each(x => movie_collection.Add(new Movie()));
       };
 
       Because b = () =>
@@ -143,6 +143,7 @@ namespace prep.movies
 
       static IEnumerable<Movie> result;
     }
+
     public class when_adding_a_movie_to_the_library : movie_library_concern
     {
       static Movie movie;
@@ -213,7 +214,8 @@ namespace prep.movies
 
       It should_be_able_to_find_all_movies_published_by_pixar_or_disney = () =>
       {
-        var criteria = Match<Movie>.with_attribute(x => x.production_studio).equal_to(ProductionStudio.Pixar,ProductionStudio.Disney);
+        var criteria = Match<Movie>.with_attribute(x => x.production_studio)
+          .equal_to(ProductionStudio.Pixar, ProductionStudio.Disney);
 
         var results = sut.all_movies().all_items_matching(criteria);
 
@@ -240,7 +242,7 @@ namespace prep.movies
 
       It should_be_able_to_find_all_movies_published_between_a_certain_range_of_years = () =>
       {
-        var criteria = Match<Movie>.with_comparable_attribute(x => x.date_published.Year).between(1982,2003);
+        var criteria = Match<Movie>.with_comparable_attribute(x => x.date_published.Year).between(1982, 2003);
 
         var results = sut.all_movies().all_items_matching(criteria);
 

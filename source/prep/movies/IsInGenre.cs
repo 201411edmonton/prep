@@ -14,6 +14,6 @@ namespace prep.movies
     public bool matches(Movie movie)
     {
       return movie.genre == genre;
-    } 
+    }
   }
 }

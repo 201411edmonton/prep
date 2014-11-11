@@ -1,6 +1,4 @@
 using System;
-using prep.movies;
-using prep.utility;
 
 namespace prep.matching
 {
@@ -22,7 +20,7 @@ namespace prep.matching
 
     public IMatchA<ItemToMatch> between(AttributeType start, AttributeType end)
     {
-      return new ConditionalMatch<ItemToMatch>(x => accessor(x).CompareTo(start) >= 0 && accessor(x).CompareTo(end) <=0);
+      return new ConditionalMatch<ItemToMatch>(x => accessor(x).CompareTo(start) >= 0 && accessor(x).CompareTo(end) <= 0);
     }
   }
 }
