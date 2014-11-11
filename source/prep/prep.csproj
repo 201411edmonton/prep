@@ -80,6 +80,7 @@
   <ItemGroup>
     <Compile Include="matching\ComparableMatchFactory.cs" />
     <Compile Include="matching\ConditionalMatch.cs" />
+    <Compile Include="matching\ICreateMatchers.cs" />
     <Compile Include="matching\IGetAnAttributeValue.cs" />
     <Compile Include="matching\IMatchA.cs" />
     <Compile Include="matching\Match.cs" />

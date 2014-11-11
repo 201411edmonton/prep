@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace prep.matching
 {
-  public class MatchFactory<ItemToMatch, AttributeType>
+  public class MatchFactory<ItemToMatch, AttributeType> : ICreateMatchers<ItemToMatch, AttributeType>
   {
     IGetAnAttributeValue<ItemToMatch, AttributeType> accessor;
 
@@ -23,6 +23,11 @@ namespace prep.matching
     public IMatchA<ItemToMatch> not_equal_to(AttributeType value)
     {
       return equal_to(value).not();
+    }
+
+    public IMatchA<ItemToMatch> blah(AttributeType value)
+    {
+      throw new System.NotImplementedException();
     }
   }
 }

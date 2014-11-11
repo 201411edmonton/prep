@@ -2,16 +2,18 @@ using System;
 
 namespace prep.matching
 {
-  public class ComparableMatchFactory<ItemToMatch, AttributeType>
+  public class ComparableMatchFactory<ItemToMatch, AttributeType> : ICreateMatchers<ItemToMatch, AttributeType> 
     where AttributeType : IComparable<AttributeType>
 
   {
     IGetAnAttributeValue<ItemToMatch, AttributeType> accessor;
-      private MatchFactory<ItemToMatch, AttributeType> regularMatchFactory;
-    public ComparableMatchFactory(IGetAnAttributeValue<ItemToMatch, AttributeType> accessor, MatchFactory<ItemToMatch, AttributeType> regularMatchFactory)
+    ICreateMatchers<ItemToMatch, AttributeType> regular_match_factory;
+
+    public ComparableMatchFactory(IGetAnAttributeValue<ItemToMatch, AttributeType> accessor,
+      ICreateMatchers<ItemToMatch, AttributeType> regular_match_factory)
     {
       this.accessor = accessor;
-      this.regularMatchFactory = regularMatchFactory;
+      this.regular_match_factory = regular_match_factory;
     }
 
     public IMatchA<ItemToMatch> greater_than(AttributeType value)
@@ -26,12 +28,17 @@ namespace prep.matching
 
     public IMatchA<ItemToMatch> equal_to(params AttributeType[] values)
     {
-      return regularMatchFactory.equal_to(values);
+      return regular_match_factory.equal_to(values);
     }
 
     public IMatchA<ItemToMatch> not_equal_to(AttributeType value)
     {
-      return regularMatchFactory.not_equal_to(value);
+      return regular_match_factory.not_equal_to(value);
+    }
+
+    public IMatchA<ItemToMatch> blah(AttributeType value)
+    {
+      return regular_match_factory.blah(value);
     }
   }
 }
