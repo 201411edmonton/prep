@@ -13,7 +13,7 @@ namespace prep.matching
     public static ComparableMatchFactory<ItemToMatch, AttributeType> with_comparable_attribute<AttributeType>(
       IGetAnAttributeValue<ItemToMatch, AttributeType> accessor) where AttributeType : IComparable<AttributeType>
     {
-      return new ComparableMatchFactory<ItemToMatch, AttributeType>(accessor);
+      return new ComparableMatchFactory<ItemToMatch, AttributeType>(accessor, new MatchFactory<ItemToMatch,AttributeType>(accessor));
     }
   }
 }
