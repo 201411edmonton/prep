@@ -78,17 +78,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="matching\ComparableMatchFactory.cs" />
     <Compile Include="matching\ConditionalMatch.cs" />
-    <Compile Include="matching\ICreateMatchers.cs" />
+    <Compile Include="matching\EqualToAny.cs" />
+    <Compile Include="matching\GreaterThan.cs" />
     <Compile Include="matching\IGetAnAttributeValue.cs" />
     <Compile Include="matching\IMatchA.cs" />
+    <Compile Include="matching\IsBetween.cs" />
     <Compile Include="matching\Match.cs" />
+    <Compile Include="matching\MatchCreationExtensionPoint.cs" />
+    <Compile Include="matching\MatchCreationExtensions.cs" />
     <Compile Include="matching\MatchExtensions.cs" />
-    <Compile Include="matching\MatchFactory.cs" />
     <Compile Include="matching\NegatingMatch.cs" />
     <Compile Include="matching\NeverMatches.cs" />
     <Compile Include="matching\OrMatch.cs" />
+    <Compile Include="matching\AttributeValueMatch.cs" />
     <Compile Include="movies\Genre.cs" />
     <Compile Include="movies\IsInGenre.cs" />
     <Compile Include="movies\Movie.cs" />
