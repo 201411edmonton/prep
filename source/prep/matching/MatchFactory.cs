@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace prep.matching
 {
@@ -16,9 +17,14 @@ namespace prep.matching
       return new ConditionalMatch<ItemToMatch>(x => accessor(x).Equals(value));
     }
 
-    public IMatchA<ItemToMatch> equal_to_any(params AttributeType[] values)
+    public IEnumerable<IMatchA<ItemToMatch>> equal_to_any(params AttributeType[] values)
     {
-      throw new NotImplementedException();
+        var manyConditions = new List<IMatchA<ItemToMatch>>(){}; 
+        foreach (AttributeType attrib in values)
+        {
+            manyConditions.Add(equal_to(attrib));
+        }
+        return manyConditions;
     }
   }
 }
