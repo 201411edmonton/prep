@@ -221,9 +221,7 @@ namespace prep.movies
 
       It should_be_able_to_find_all_movies_not_published_by_pixar = () =>
       {
-        var criteria = Match<Movie>.with_attribute(x => x.production_studio).not.equal_to(ProductionStudio.Pixar);
-
-        var results = sut.all_movies().all_items_matching(criteria);
+        var results = sut.all_movies().where(x => x.production_studio).not.equal_to(ProductionStudio.Pixar);
 
         results.ShouldNotContain(cars, a_bugs_life);
       };
