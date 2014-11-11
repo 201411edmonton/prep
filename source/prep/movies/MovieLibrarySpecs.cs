@@ -213,7 +213,7 @@ namespace prep.movies
 
       It should_be_able_to_find_all_movies_published_by_pixar_or_disney = () =>
       {
-        var criteria = Match<Movie>.with_attribute(x => x.production_studio).equal_to_any(ProductionStudio.Pixar,ProductionStudio.Disney);
+        var criteria = Match<Movie>.with_attribute(x => x.production_studio).equal_to(ProductionStudio.Pixar,ProductionStudio.Disney);
 
         var results = sut.all_movies().all_items_matching(criteria);
 
@@ -222,7 +222,9 @@ namespace prep.movies
 
       It should_be_able_to_find_all_movies_not_published_by_pixar = () =>
       {
-        var results = sut.all_movies_not_published_by_pixar();
+        var criteria = Match<Movie>.with_attribute(x => x.production_studio).not_equal_to(ProductionStudio.Pixar);
+
+        var results = sut.all_movies().all_items_matching(criteria);
 
         results.ShouldNotContain(cars, a_bugs_life);
       };

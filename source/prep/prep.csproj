@@ -84,6 +84,7 @@
     <Compile Include="matching\Match.cs" />
     <Compile Include="matching\MatchExtensions.cs" />
     <Compile Include="matching\MatchFactory.cs" />
+    <Compile Include="matching\NeverMatches.cs" />
     <Compile Include="matching\OrMatch.cs" />
     <Compile Include="movies\Genre.cs" />
     <Compile Include="movies\IsInGenre.cs" />

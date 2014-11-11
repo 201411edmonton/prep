@@ -12,19 +12,18 @@ namespace prep.matching
       this.accessor = accessor;
     }
 
-    public IMatchA<ItemToMatch> equal_to(AttributeType value)
+    public IMatchA<ItemToMatch> equal_to(params AttributeType[] values)
     {
-      return new ConditionalMatch<ItemToMatch>(x => accessor(x).Equals(value));
+      return new ConditionalMatch<ItemToMatch>(x =>
+      {
+        var value = accessor(x);
+        return new List<AttributeType>(values).Contains(value);
+      });
     }
 
-    public IEnumerable<IMatchA<ItemToMatch>> equal_to_any(params AttributeType[] values)
+    public IMatchA<ItemToMatch> not_equal_to(AttributeType value)
     {
-        var manyConditions = new List<IMatchA<ItemToMatch>>(){}; 
-        foreach (AttributeType attrib in values)
-        {
-            manyConditions.Add(equal_to(attrib));
-        }
-        return manyConditions;
+      throw new NotImplementedException();
     }
   }
 }
