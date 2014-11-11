@@ -1,12 +1,11 @@
-using System;
-
 namespace prep.matching
 {
   public class Match<ItemToMatch>
   {
-    public static .... with_attribute<AttributeType>(IGetAnAttributeValue<ItemToMatch, AttributeType> accessor)
+    public static MatchFactory<ItemToMatch, AttributeType> with_attribute<AttributeType>(
+      IGetAnAttributeValue<ItemToMatch, AttributeType> accessor)
     {
-      throw new NotImplementedException();
+      return new MatchFactory<ItemToMatch, AttributeType>(accessor);
     }
   }
 }
