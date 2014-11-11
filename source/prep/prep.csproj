@@ -79,12 +79,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="matching\ConditionalMatch.cs" />
+    <Compile Include="matching\IGetAnAttributeValue.cs" />
     <Compile Include="matching\IMatchA.cs" />
+    <Compile Include="matching\Match.cs" />
     <Compile Include="matching\MatchExtensions.cs" />
     <Compile Include="matching\OrMatch.cs" />
     <Compile Include="movies\Genre.cs" />
     <Compile Include="movies\IsInGenre.cs" />
-    <Compile Include="movies\Match.cs" />
     <Compile Include="movies\Movie.cs" />
     <Compile Include="movies\MovieCondition.cs" />
     <Compile Include="movies\MovieLibrary.cs" />

@@ -204,7 +204,7 @@ namespace prep.movies
 
       It should_be_able_to_find_all_movies_published_by_pixar = () =>
       {
-        IMatchA<Movie> criteria = Match<Movie>.with_attribute(x => x.production_studio).equal_to(ProductionStudio.Pixar);
+        var criteria = Match<Movie>.with_attribute(x => x.production_studio).equal_to(ProductionStudio.Pixar);
 
         var results = sut.all_movies().all_items_matching(criteria);
 

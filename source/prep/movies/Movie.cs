@@ -1,6 +1,5 @@
 using System;
 using prep.matching;
-using prep.utility;
 
 namespace prep.movies
 {
@@ -16,7 +15,7 @@ namespace prep.movies
     {
       if (other == null) return false;
 
-      return ReferenceEquals(this, other)  || this.title.Equals(other.title);
+      return ReferenceEquals(this, other) || this.title.Equals(other.title);
     }
 
     public override bool Equals(object obj)
