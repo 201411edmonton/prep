@@ -79,9 +79,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="matching\ConditionalMatch.cs" />
+    <Compile Include="matching\DateMatchCreationExtensions.cs" />
     <Compile Include="matching\EqualToAny.cs" />
     <Compile Include="matching\GreaterThan.cs" />
-    <Compile Include="matching\IGetAnAttributeValue.cs" />
+    <Compile Include="core\IGetAnAttributeValue.cs" />
     <Compile Include="matching\IMatchA.cs" />
     <Compile Include="matching\IsBetween.cs" />
     <Compile Include="matching\Match.cs" />
@@ -102,9 +103,9 @@
     <Compile Include="movies\IsPublishedBy.cs" />
     <Compile Include="movies\ReadOnlySet.cs" />
     <Compile Include="test_utilities\CollectionExtensions.cs" />
-    <Compile Include="utility\Condition.cs" />
-    <Compile Include="utility\FilteringExtensions.cs" />
-    <Compile Include="utility\IterationExtensions.cs" />
+    <Compile Include="core\Condition.cs" />
+    <Compile Include="matching\FilteringExtensions.cs" />
+    <Compile Include="core\IterationExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />

@@ -1,11 +1,14 @@
-﻿namespace prep.matching
+﻿using prep.core;
+
+namespace prep.matching
 {
   public class AttributeValueMatch<ItemToMatch, AttributeType> : IMatchA<ItemToMatch>
   {
     IGetAnAttributeValue<ItemToMatch, AttributeType> get_the_value;
     IMatchA<AttributeType> value_criteria;
 
-    public AttributeValueMatch(IGetAnAttributeValue<ItemToMatch, AttributeType> get_the_value, IMatchA<AttributeType> value_criteria)
+    public AttributeValueMatch(IGetAnAttributeValue<ItemToMatch, AttributeType> get_the_value,
+      IMatchA<AttributeType> value_criteria)
     {
       this.get_the_value = get_the_value;
       this.value_criteria = value_criteria;

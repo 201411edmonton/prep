@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace prep.utility
+namespace prep.core
 {
   public static class IterationExtensions
   {

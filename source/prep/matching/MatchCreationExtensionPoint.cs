@@ -1,3 +1,5 @@
+using prep.core;
+
 namespace prep.matching
 {
   public class MatchCreationExtensionPoint<ItemToMatch, AttributeType>

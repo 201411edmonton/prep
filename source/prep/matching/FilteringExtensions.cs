@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using prep.matching;
+using prep.core;
 
-namespace prep.utility
+namespace prep.matching
 {
   public static class FilteringExtensions
   {

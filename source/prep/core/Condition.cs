@@ -1,4 +1,4 @@
-﻿namespace prep.utility
+﻿namespace prep.core
 {
   public delegate bool Condition<in ItemToCheck>(ItemToCheck item);
 }
