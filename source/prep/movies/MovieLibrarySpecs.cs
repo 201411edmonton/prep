@@ -52,6 +52,7 @@ using System.Linq;
 using developwithpassion.specifications.extensions;
 using developwithpassion.specifications.rhinomocks;
 using Machine.Specifications;
+using prep.matching;
 using prep.test_utilities;
 using prep.utility;
 
@@ -203,7 +204,9 @@ namespace prep.movies
 
       It should_be_able_to_find_all_movies_published_by_pixar = () =>
       {
-        var results = sut.all_movies().all_items_matching(Movie.published_by(ProductionStudio.Pixar));
+        IMatchA<Movie> criteria = Match<Movie>.with_attribute(x => x.production_studio).equal_to(ProductionStudio.Pixar);
+
+        var results = sut.all_movies().all_items_matching(criteria);
 
         results.ShouldContainOnly(cars, a_bugs_life);
       };
