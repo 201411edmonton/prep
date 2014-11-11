@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 
 namespace prep.matching
@@ -23,7 +22,7 @@ namespace prep.matching
 
     public IMatchA<ItemToMatch> not_equal_to(AttributeType value)
     {
-      throw new NotImplementedException();
+      return equal_to(value).not();
     }
   }
 }

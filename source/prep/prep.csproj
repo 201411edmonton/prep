@@ -78,12 +78,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="matching\ComparableMatchFactory.cs" />
     <Compile Include="matching\ConditionalMatch.cs" />
     <Compile Include="matching\IGetAnAttributeValue.cs" />
     <Compile Include="matching\IMatchA.cs" />
     <Compile Include="matching\Match.cs" />
     <Compile Include="matching\MatchExtensions.cs" />
     <Compile Include="matching\MatchFactory.cs" />
+    <Compile Include="matching\NegatingMatch.cs" />
     <Compile Include="matching\NeverMatches.cs" />
     <Compile Include="matching\OrMatch.cs" />
     <Compile Include="movies\Genre.cs" />

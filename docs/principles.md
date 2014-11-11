@@ -17,4 +17,3 @@
 7. Encapsulate what varies - Separate code that changes from code that does not.
 
 8. Favour composition over inheritance
-
