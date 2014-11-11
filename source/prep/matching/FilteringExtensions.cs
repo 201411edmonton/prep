@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using prep.core;
 
 namespace prep.matching
@@ -19,6 +20,12 @@ namespace prep.matching
       IMatchA<T> criteria)
     {
       return items.all_items_matching(criteria.matches);
+    }
+
+    public static void where<ItemToFilter, AttributeType>(this IEnumerable<ItemToFilter> items,
+      IGetAnAttributeValue<ItemToFilter, AttributeType> accessor)
+    {
+      throw new NotImplementedException();
     }
   }
 }
