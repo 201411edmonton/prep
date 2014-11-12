@@ -19,12 +19,12 @@ namespace prep.matching
       return items.all_items_matching(criteria.matches);
     }
 
-    public static FilteringExtensionPoint<ItemToFilter, AttributeType> where<ItemToFilter, AttributeType>(this IEnumerable<ItemToFilter> items,
+    public static FilteringExtensionPoint<ItemToFilter, AttributeType> where<ItemToFilter, AttributeType>(
+      this IEnumerable<ItemToFilter> items,
       IGetAnAttributeValue<ItemToFilter, AttributeType> accessor)
     {
       return new FilteringExtensionPoint<ItemToFilter, AttributeType>(items,
         Match<ItemToFilter>.with_attribute(accessor));
     }
-
   }
 }
