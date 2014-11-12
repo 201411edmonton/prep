@@ -1,5 +1,5 @@
 alias ck='thor code_kata:start'
-alias ct='./build/automation/continuous_testing'
+alias ct='thor continuous_testing:run_it'
 alias fb='thor git:fetch_branch $*'
 alias fl='thor git:fetch_latest $*'
 alias gljp='thor git::get_latest_from_jp'
