@@ -97,6 +97,7 @@
     <Compile Include="matching\NeverMatches.cs" />
     <Compile Include="matching\OrMatch.cs" />
     <Compile Include="matching\AttributeValueMatch.cs" />
+    <Compile Include="movies\CombinedComparer.cs" />
     <Compile Include="movies\Genre.cs" />
     <Compile Include="movies\IsInGenre.cs" />
     <Compile Include="movies\Movie.cs" />
@@ -107,7 +108,14 @@
     <Compile Include="movies\MovieLibrarySpecs.cs" />
     <Compile Include="movies\IsPublishedBy.cs" />
     <Compile Include="movies\ReadOnlySet.cs" />
+    <Compile Include="movies\ReverseComparer.cs" />
     <Compile Include="ranges\IContainValues.cs" />
+    <Compile Include="sorting\ComparableComparer.cs" />
+    <Compile Include="sorting\AttributeComparer.cs" />
+    <Compile Include="sorting\Compare.cs" />
+    <Compile Include="sorting\FixedComparer.cs" />
+    <Compile Include="sorting\IApplyASortDirection.cs" />
+    <Compile Include="sorting\SortDirection.cs" />
     <Compile Include="sorting\SortingExtensions.cs" />
     <Compile Include="test_examples\Calculator.cs" />
     <Compile Include="test_examples\CalculatorSpecs.cs" />

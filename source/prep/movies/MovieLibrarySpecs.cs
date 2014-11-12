@@ -273,7 +273,7 @@ namespace prep.movies
 
       It should_be_able_to_sort_all_movies_by_title_descending = () =>
       {
-        var comparer = Compare<Movie>.by_descending(x => x.title);
+        var comparer = Compare<Movie>.by(x => x.title,SortDirection.descending);
 
         var results = sut.all_movies().sort_using(comparer);
 
@@ -295,7 +295,10 @@ namespace prep.movies
 
       It should_be_able_to_sort_all_movies_by_date_published_descending = () =>
       {
-        var comparer = Compare<Movie>.by_descending(x => x.date_published);
+        var date_comparer = Compare<DateTime>.by(x => x.Year)
+          .then_by(x => x.Month);
+
+        var comparer = Compare<Movie>.by(x => x.date_published,SortDirection.descending);
 
         var results = sut.all_movies().sort_using(comparer);
 
