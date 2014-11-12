@@ -3,27 +3,28 @@ using System.Data;
 
 namespace prep.test_examples
 {
-  public class Calculator
-  {
-    IDbConnection connection;
-
-    public Calculator(IDbConnection connection)
+    public class Calculator
     {
-      this.connection = connection;
-    }
+        private IDbConnection connection;
 
-    public int add(int first, int second)
-    {
-      ensure_positive_arguments(first, second);
+        public Calculator(IDbConnection connection)
+        {
+            this.connection = connection;
+        }
 
-      connection.Open();
-      return first + second;
-    }
+        public int add(int first, int second)
+        {
+            ensure_positive_arguments(first, second);
+            connection.Open();
+            var command = connection.CreateCommand();
+            command.ExecuteNonQuery();
+            return first + second;
+        }
 
-    static void ensure_positive_arguments(int first, int second)
-    {
-      if (first < 0 || second < 0)
-        throw new ArgumentException();
+        private static void ensure_positive_arguments(int first, int second)
+        {
+            if (first < 0 || second < 0)
+                throw new ArgumentException();
+        }
     }
-  }
 }
