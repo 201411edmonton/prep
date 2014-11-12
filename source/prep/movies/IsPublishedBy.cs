@@ -1,4 +1,4 @@
-﻿using prep.matching;
+﻿using prep.matching.core;
 
 namespace prep.movies
 {

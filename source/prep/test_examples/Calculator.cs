@@ -10,7 +10,7 @@ namespace prep.test_examples
     void shut_off();
   }
 
-  public interface ICalculate 
+  public interface ICalculate
   {
     int add(int first, int second);
   }

@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Data;
 using System.Security;
-using System.Security.Cryptography;
 using System.Security.Principal;
 using System.Threading;
 using developwithpassion.specifications.extensions;
 using developwithpassion.specifications.rhinomocks;
 using Machine.Specifications;
-using prep.matching;
 using Rhino.Mocks;
 
 namespace prep.test_examples
@@ -32,8 +30,8 @@ namespace prep.test_examples
 
     public abstract class concern_for_powering_down : Observes<ICanPowerDown, Calculator>
     {
-      
     }
+
     public class when_shutting_off_the_calculator : concern_for_powering_down
     {
       public class and_they_are_in_the_correct_security_group

@@ -86,8 +86,8 @@
     <Compile Include="matching\FilteringExtensionPoint.cs" />
     <Compile Include="matching\GreaterThan.cs" />
     <Compile Include="core\IGetAnAttributeValue.cs" />
-    <Compile Include="matching\IMatchA.cs" />
-    <Compile Include="matching\ICreateAResult.cs" />
+    <Compile Include="matching.core\IMatchA.cs" />
+    <Compile Include="core\ICreateAResult.cs" />
     <Compile Include="matching\IsBetween.cs" />
     <Compile Include="matching\Match.cs" />
     <Compile Include="matching\MatchCreationExtensionPoint.cs" />

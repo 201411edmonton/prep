@@ -1,4 +1,6 @@
-﻿namespace prep.matching
+﻿using prep.matching.core;
+
+namespace prep.matching
 {
   public class OrMatch<ItemToMatch> : IMatchA<ItemToMatch>
   {

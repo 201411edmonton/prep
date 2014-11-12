@@ -205,7 +205,7 @@ namespace prep.movies
 
       It should_be_able_to_find_all_movies_published_by_pixar = () =>
       {
-        var results = sut.all_movies().where(x => x.production_studio).equal_to(ProductionStudio.Pixar);
+        var results = sut.all_movies().@where(x => x.production_studio).equal_to(ProductionStudio.Pixar);
 
         results.ShouldContainOnly(cars, a_bugs_life);
       };
@@ -271,7 +271,6 @@ namespace prep.movies
              * movies using different criteria. Feel free to change/remove explicit methods if you find a way to encompass sorting
              * without the need for using explicit methods. For this exercise, no linq queries are allowed!!. */
 
-
       It should_be_able_to_sort_all_movies_by_title_descending = () =>
       {
         var comparer = Compare<Movie>.by_descending(x => x.title);
@@ -324,7 +323,7 @@ namespace prep.movies
         //Dreamworks
         //Universal
         //Disney
-        var comparer = Comparer<Movie>.by(x => x.production_studio,
+        var comparer = Compare<Movie>.by(x => x.production_studio,
           ProductionStudio.MGM,
           ProductionStudio.Pixar,
           ProductionStudio.Dreamworks,

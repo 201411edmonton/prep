@@ -1,4 +1,4 @@
-﻿namespace prep.matching
+﻿namespace prep.matching.core
 {
   public interface IMatchA<in ItemToMatch>
   {

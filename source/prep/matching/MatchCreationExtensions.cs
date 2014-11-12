@@ -1,4 +1,6 @@
 ﻿using System;
+using prep.core;
+using prep.matching.core;
 using prep.ranges;
 
 namespace prep.matching
