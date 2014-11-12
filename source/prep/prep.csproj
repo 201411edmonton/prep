@@ -101,12 +101,14 @@
     <Compile Include="movies\IsInGenre.cs" />
     <Compile Include="movies\Movie.cs" />
     <Compile Include="movies\MovieCondition.cs" />
+    <Compile Include="movies\MovieDateReleaseComparer.cs" />
     <Compile Include="movies\MovieLibrary.cs" />
     <Compile Include="movies\ProductionStudio.cs" />
     <Compile Include="movies\MovieLibrarySpecs.cs" />
     <Compile Include="movies\IsPublishedBy.cs" />
     <Compile Include="movies\ReadOnlySet.cs" />
     <Compile Include="ranges\IContainValues.cs" />
+    <Compile Include="sorting\SortingExtensions.cs" />
     <Compile Include="test_examples\Calculator.cs" />
     <Compile Include="test_examples\CalculatorSpecs.cs" />
     <Compile Include="test_utilities\CollectionExtensions.cs" />
