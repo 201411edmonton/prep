@@ -1,4 +1,6 @@
-﻿namespace prep.matching
+﻿using System;
+
+namespace prep.matching
 {
   public static class MatchExtensions
   {
@@ -11,6 +13,12 @@
     public static IMatchA<ItemToMatch> not<ItemToMatch>(this IMatchA<ItemToMatch> to_negate)
     {
       return new NegatingMatch<ItemToMatch>(to_negate);
+    }
+
+    public static ResultType or<ItemToMatch, AttributeType, ResultType>(this ResultType result,
+      Func<ICreateAResult<ItemToMatch, AttributeType, ResultType>, ResultType> next)
+    {
+      throw new NotImplementedException();
     }
   }
 }

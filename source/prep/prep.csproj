@@ -106,6 +106,8 @@
     <Compile Include="movies\IsPublishedBy.cs" />
     <Compile Include="movies\ReadOnlySet.cs" />
     <Compile Include="ranges\IContainValues.cs" />
+    <Compile Include="test_examples\Calculator.cs" />
+    <Compile Include="test_examples\CalculatorSpecs.cs" />
     <Compile Include="test_utilities\CollectionExtensions.cs" />
     <Compile Include="core\Condition.cs" />
     <Compile Include="matching\FilteringExtensions.cs" />
