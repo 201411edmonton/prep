@@ -24,6 +24,13 @@ namespace prep.test_examples
     {
       public class two_positive_numbers
       {
+        Establish c = () =>
+        {
+          command = fake.an<IDbCommand>();
+
+          connection.setup(x => x.CreateCommand()).Return(command);
+        };
+
         //Act
         Because b = () =>
           result = sut.add(2, 3);
@@ -35,7 +42,11 @@ namespace prep.test_examples
         It opens_a_connection_to_the_database = () =>
           connection.received(x => x.Open());
 
+        It runs_a_query = () =>
+          command.received(x => x.ExecuteNonQuery());
+
         static int result;
+        static IDbCommand command;
       }
 
       public class a_negative_to_a_positive
