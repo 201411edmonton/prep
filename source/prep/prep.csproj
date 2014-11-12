@@ -81,10 +81,12 @@
     <Compile Include="matching\ConditionalMatch.cs" />
     <Compile Include="matching\DateMatchCreationExtensions.cs" />
     <Compile Include="matching\EqualToAny.cs" />
+    <Compile Include="matching\FallsInRange.cs" />
+    <Compile Include="matching\FilteringExtensionPoint.cs" />
     <Compile Include="matching\GreaterThan.cs" />
     <Compile Include="core\IGetAnAttributeValue.cs" />
     <Compile Include="matching\IMatchA.cs" />
-    <Compile Include="matching\IProvideAccessToCreateMatchers.cs" />
+    <Compile Include="matching\ICreateAResult.cs" />
     <Compile Include="matching\IsBetween.cs" />
     <Compile Include="matching\Match.cs" />
     <Compile Include="matching\MatchCreationExtensionPoint.cs" />
@@ -103,6 +105,7 @@
     <Compile Include="movies\MovieLibrarySpecs.cs" />
     <Compile Include="movies\IsPublishedBy.cs" />
     <Compile Include="movies\ReadOnlySet.cs" />
+    <Compile Include="ranges\IContainValues.cs" />
     <Compile Include="test_utilities\CollectionExtensions.cs" />
     <Compile Include="core\Condition.cs" />
     <Compile Include="matching\FilteringExtensions.cs" />

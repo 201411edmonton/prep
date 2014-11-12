@@ -21,29 +21,12 @@ namespace prep.matching
       return items.all_items_matching(criteria.matches);
     }
 
-    public static LazyFiltering<ItemToFilter, AttributeType> where<ItemToFilter, AttributeType>(this IEnumerable<ItemToFilter> items,
+    public static FilteringExtensionPoint<ItemToFilter, AttributeType> where<ItemToFilter, AttributeType>(this IEnumerable<ItemToFilter> items,
       IGetAnAttributeValue<ItemToFilter, AttributeType> accessor)
     {
-      return new LazyFiltering<ItemToFilter, AttributeType>(items,
+      return new FilteringExtensionPoint<ItemToFilter, AttributeType>(items,
         Match<ItemToFilter>.with_attribute(accessor));
     }
 
-    public class LazyFiltering<T, AttributeType>
-    {
-      IEnumerable<T> items_to_filter;
-      IProvideAccessToCreateMatchers<T, AttributeType> extension_point;
-
-      public LazyFiltering(IEnumerable<T> items_to_filter,
-        IProvideAccessToCreateMatchers<T, AttributeType> extension_point)
-      {
-        this.items_to_filter = items_to_filter;
-        this.extension_point = extension_point;
-      }
-
-      public IEnumerable<T> equal_to(AttributeType value)
-      {
-        return items_to_filter.all_items_matching(extension_point.equal_to(value));
-      }
-    }
   }
 }

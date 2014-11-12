@@ -2,30 +2,29 @@ using prep.core;
 
 namespace prep.matching
 {
-  public class MatchCreationExtensionPoint<ItemToMatch, AttributeType> : IProvideAccessToCreateMatchers<ItemToMatch, AttributeType>
+  public class MatchCreationExtensionPoint<ItemToMatch, AttributeType> :
+    ICreateAResult<ItemToMatch, AttributeType, IMatchA<ItemToMatch>>
   {
     IGetAnAttributeValue<ItemToMatch, AttributeType> accessor;
 
-    public IProvideAccessToCreateMatchers<ItemToMatch, AttributeType> not
+    public ICreateAResult<ItemToMatch, AttributeType, IMatchA<ItemToMatch>> not
     {
-      get
-      {
-        return new NegatingMatchCreationExtensionPoint(this);
-      }
+      get { return new NegatingMatchCreationExtensionPoint(this); }
     }
 
-    class NegatingMatchCreationExtensionPoint : IProvideAccessToCreateMatchers<ItemToMatch, AttributeType>
+    class NegatingMatchCreationExtensionPoint : ICreateAResult<ItemToMatch, AttributeType, IMatchA<ItemToMatch>>
     {
-      IProvideAccessToCreateMatchers<ItemToMatch, AttributeType> original;
+      ICreateAResult<ItemToMatch, AttributeType, IMatchA<ItemToMatch>> original;
 
-      public NegatingMatchCreationExtensionPoint(IProvideAccessToCreateMatchers<ItemToMatch, AttributeType> original)
+      public NegatingMatchCreationExtensionPoint(
+        ICreateAResult<ItemToMatch, AttributeType, IMatchA<ItemToMatch>> original)
       {
         this.original = original;
       }
 
-      public IMatchA<ItemToMatch> create_match(IMatchA<AttributeType> value_matcher)
+      public IMatchA<ItemToMatch> create_result(IMatchA<AttributeType> value_matcher)
       {
-        return original.create_match(value_matcher).not();
+        return original.create_result(value_matcher).not();
       }
     }
 
@@ -34,7 +33,7 @@ namespace prep.matching
       this.accessor = accessor;
     }
 
-    public IMatchA<ItemToMatch> create_match(IMatchA<AttributeType> value_matcher)
+    public IMatchA<ItemToMatch> create_result(IMatchA<AttributeType> value_matcher)
     {
       return new AttributeValueMatch<ItemToMatch, AttributeType>(
         accessor,
